@@ -1,0 +1,59 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1>Product Detail</h1><hr>
+
+<div class="col-md-6 mb-4">
+
+    <img src="{{product.image.url}}" class="img-fluid" alt="">
+
+  </div>
+  <!--Grid column-->
+
+  <!--Grid column-->
+  <div class="col-md-6 mb-4">
+
+    <!--Content-->
+    <div class="p-4">
+{% comment %} 
+      <div class="mb-3">
+        <a href="">
+          <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+        </a>
+      </div> {% endcomment %}
+
+      <p class="lead">
+        {% if product.discount_price %}
+        <span class="mr-1">
+          <del>${{ product.price }}</del>
+        </span>
+        <span>${{ product.discount_price }}</span>
+        {% else %}
+        <span>${{ product.price }}</span>
+        {% endif %}
+      </p>
+
+      <p class="lead font-weight-bold">Description</p>
+
+      <p>{{ product.description }}</p>
+
+      
+      {% comment %} <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p"> {% endcomment %}
+        Add to cart
+        <i class="fas fa-shopping-cart ml-1"></i>
+      </a>
+      {% comment %} <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p"> {% endcomment %}
+        Remove from cart
+      </a>
+
+    </div>
+    <!--Content-->
+
+  </div>
+  <!--Grid column-->
+
+</div>
+
+{% endblock content %}
+

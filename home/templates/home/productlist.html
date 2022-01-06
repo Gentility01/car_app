@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div>
+
+        <h3>Categories</h3>
+    <ul>
+        <li><a href="{% url 'product:product_list_category' %}">All</a></li>
+    </ul>
+    {% for ca in categories %}
+        {% comment %} <li><a href="{{ca.get_absolute_url}}">{{ca.name}}</a></li> {% endcomment %}
+    {% endfor %}
+
+</div>
+<div>
+    <h1>{% if category %}{{category.name}} {% else %} Products{% endif %}</h1>
+    {% for pa in product %}
+    <a href="{{pa.get_absolute_url}}">{{ca.name}}</a>
+    
+    {% endfor %}
+</div>
+{% endblock content %}
+
+
