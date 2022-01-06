@@ -30,4 +30,9 @@ class ProductCreateForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'image', 'price', 'category', 'discount_price', 'description']
+        
+class CategoryCreateForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'
     

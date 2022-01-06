@@ -5,17 +5,43 @@
 <br>
 
 
-    <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <form action="" method="POST">{% csrf_token %}
-                {{form|crispy}}
-            <input type="submit" value="save">
-            </form>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      {% if c_form %}
+      <a href="{% url 'product:category_post' %}"><button class="btn btn-custom" type="submit" id="sendMessageButton">Category form</button></a>
+      
+      <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
-          </div>
-        </div>
-      </div>
+          {{c_form|crispy}}
+      <input type="submit" value="save">
+      </form>
+      {% else %}
+      <a href="{% url 'product:category_post' %}"><button class="btn btn-custom" type="submit" id="sendMessageButton">Category form</button></a>
+      {% endif %}
+
+    </div>
+
+    <div class="col-8">
+      {% if form %}
+      <a href="{% url 'product:create_post' %}"><button class="btn btn-custom" type="submit" id="sendMessageButton">Product form</button></a>
+      <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+          {{form|crispy}}
+      <input type="submit" value="save">
+      </form>
+      {% else %}
+      <a href="{% url 'product:create_post' %}"><button class="btn btn-custom" type="submit" id="sendMessageButton">Product form</button></a>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
 
 
 {% endblock content %}

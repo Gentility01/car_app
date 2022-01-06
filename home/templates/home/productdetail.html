@@ -4,6 +4,7 @@
 
 <h1>Product Detail</h1><hr>
 
+<div class="row">
 <div class="col-md-6 mb-4">
 
     <img src="{{product.image.url}}" class="img-fluid" alt="">
@@ -26,9 +27,9 @@
       <p class="lead">
         {% if product.discount_price %}
         <span class="mr-1">
-          <del>${{ product.price }}</del>
+         Price: <del>${{ product.price }}</del>
         </span>
-        <span>${{ product.discount_price }}</span>
+        Discount price:<span>${{ product.discount_price }}</span>
         {% else %}
         <span>${{ product.price }}</span>
         {% endif %}

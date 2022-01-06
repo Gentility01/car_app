@@ -8,7 +8,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
     
     class Meta:
-        ordering = ('-name',)
+        ordering = ('name',)
     
     def __str__(self):
         return self.name
@@ -27,8 +27,12 @@ class Product(models.Model):
     discount_price =  models.FloatField()
     description =models.TextField()
     
+    
+    
+    
     class Meta:
-        ordering = ('-name',)
+        
+        ordering = ('-id',)
     
     def __str__(self):
         return self.name

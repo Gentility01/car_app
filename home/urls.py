@@ -6,7 +6,8 @@ from .views import (
   
     product_list,
     product_detail,
-    create_post
+    create_post,
+    category_post
     # ProductCreateView
    
     
@@ -19,6 +20,7 @@ urlpatterns = [
     # path('product_create', ProductCreateView.as_view(), name='product_create'),
     path('', product_list, name='product_list'),
     path('create_post/', create_post, name='create_post'),
+    path('category_post/', category_post, name='category_post'),
     path('product_list/<slug:category_slug>/', product_list, name='product_list_category'),
     path('product_detail/<int:id>/', product_detail, name='product_detail'),
 ]
